@@ -1,35 +1,193 @@
-Este projeto realiza uma análise exploratória de avaliações de clientes em um marketplace de e-commerce, buscando compreender 
-a relação entre as notas atribuídas e os comentários textuais. A análise identifica padrões de satisfação, tendências de comportamento e possíveis inconsistências
-entre avaliações numéricas e sentimentos expressos, utilizando gráficos e visualizações para gerar insights que apoiem melhorias em produtos, serviços e na experiência do consumidor.
+# Análise exploratória de dados em Marketplace AWS - O peso das palavras
 
+## Sobre o Projeto
 
-Estrutura do projeto:
+Este projeto realiza uma análise exploratória e de sentimento de avaliações de comentários em um marketplace de e-commerce, com o objetivo de compreender a relação entre as notas atribuídas pelos usuários e os sentimentos expressos em seus comentários.
 
-Seção 0 → Configuração do Ambiente (Instalações, imports e configurações)
-Nesta seção foram feitos os imports de bibliotecas como pandas, numpy, matplotlib e seaborn, implementação de bibliotecas relacionadas a análise de sentimento como VADER,LeIA, Textblod e Transforms e criação de funções auxiliares como manipulação de textos, classificação de sentimento e algoritmos de ordenação.
+Através da aplicação de técnicas de análise de dados, processamento de linguagem natural (NLP) e visualização de informações, o projeto busca identificar padrões de satisfação, tendências de comportamento e possíveis inconsistências entre avaliações numéricas e opiniões textuais.
 
-Seção 1 → Carregamento e diagnóstico do banco (Leitura do banco Estrutura, tipos e qualidade dos dados)
-Nesta seção foram feitos os carregamentos das tabelas, resumo da saúde do banco de dados, implementação do modelo relacional que mostra a organização das tabelas dentro do banco de dados suas conexões e cardinalidades, assim como o dicionário de dados.
+Os resultados obtidos fornecem insights que podem auxiliar na melhoria da experiência do cliente, na avaliação da confiabilidade de vendedores e na tomada de decisões estratégicas para o negócio.
 
-Seção 2 → Limpeza e tratamento dos dados(Tratamento de nulos, ajuste de tipos e padronizações)
-Nesta seção foi feito o tratamento e limpeza dos dados.
+---
 
-Seção 3 → Análise Exploratória das Avaliações(Distribuição das notas Junção/concatenação dos comentários, primeiros insights)
-Nesta seção foi feita a análise da tabela df_avaliacoes e a visualização da distribuição de texto nas avaliações com um gráfico em barra, focando no ponto central do projeto.
+# Objetivos
 
-Seção 4 → Investigação da Coerência entre Nota e Comentário(Identificação do problema de inconsistência e casos divergentes)
-Nesta seção foi mostrado um problema que existe no banco de notas altas com comentários negativos e o oposto disto. Também foi mostrada em forma de gráfico de barra a distribuição das avaliações de texto.
+* Analisar o comportamento das avaliações dos clientes.
+* Identificar discrepâncias entre notas e comentários.
+* Aplicar técnicas de análise de sentimento em português.
+* Comparar diferentes modelos de classificação de sentimento.
+* Transformar análises textuais em indicadores de negócio.
+* Gerar visualizações que facilitem a interpretação dos dados.
 
-Seção 5 → Análise de sentimento (VADER, LeIA, Transforms)
-Nesta seção foi iniciada a análise de sentimento utilizando VADER,LeIA e Transforms. Foi feita também gráficos para visualização dos modelos.
+---
 
-Seção 6 → Comparação entre modelos(Métricas, concordância entre resultados, escolha do modelo mais adequado)
-Nesta seção foi feita a comparação de desempenho entre os modelos para entender qual deles era o mais confiável para avaliações em português e foi feita a visualização das comparações com gráficos.
+# Tecnologias utilizadas
 
-Seção 7 → Análise Textual Complementar (Emojis, frequência de palavras e Word Cloud)
-Nesta seção foi feita a análise de emojis e wordcloud verificando o impacto deles nas pontuações e foram exploradas paralvras mais presentes nas avaliações inconsistentes.
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge)
+![Seaborn](https://img.shields.io/badge/Seaborn-4C72B0?style=for-the-badge)
+![Transformers](https://img.shields.io/badge/Transformers-FFD21E?style=for-the-badge)
+![Google Colab](https://img.shields.io/badge/Google_Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white)
 
-Seção 8 → Índice de confiabilidade por vendedor(Cálculo do índiceordenação, insights finais)
-Nesta seção foi transformada a análise de texto em um insight de negócio. Cruzamos as inconsistências detectadas pelos modelos com os vendedores, gerando um índice de confiabilidade que indica quais vendedores têm maior discrepância entre a nota recebida e o sentimento real dos comentários.
+---
 
-Também comparamos o Selection Sort implementado manualmente com o .sort_values() nativo do pandas, evidenciando o trade-off entre compreensão pedagógica e eficiência computacional.
+# 📂 Estrutura do Projeto
+
+## Seção 0 — Configuração do Ambiente
+
+Responsável pela preparação do ambiente de desenvolvimento.
+
+Principais atividades:
+
+* Instalação das bibliotecas necessárias.
+* Importação dos módulos utilizados.
+* Configuração inicial do notebook.
+* Implementação de funções auxiliares para:
+
+  * Limpeza de texto.
+  * Classificação de sentimentos.
+  * Algoritmos de ordenação.
+
+---
+
+## Seção 1 — Carregamento e Diagnóstico dos Dados
+
+Responsável pela compreensão inicial do banco de dados.
+
+Principais atividades:
+
+* Carregamento das tabelas.
+* Verificação da qualidade dos dados.
+* Análise de tipos de dados.
+* Construção do modelo relacional.
+* Identificação das cardinalidades e relacionamentos.
+* Apresentação do dicionário de dados.
+
+---
+
+## Seção 2 — Limpeza e Tratamento dos Dados
+
+Etapa dedicada à preparação dos dados para análise.
+
+Principais atividades:
+
+* Tratamento de valores nulos.
+* Correção de inconsistências.
+* Padronização de formatos.
+* Conversão de tipos de dados.
+* Ajustes necessários para garantir qualidade analítica.
+
+---
+
+## Seção 3 — Análise Exploratória das Avaliações
+
+Primeira investigação sobre o comportamento das avaliações.
+
+Principais atividades:
+
+* Distribuição das notas.
+* Análise dos comentários dos clientes.
+* Junção e tratamento dos campos textuais.
+* Construção de gráficos exploratórios.
+* Geração dos primeiros insights.
+
+---
+
+## Seção 4 — Investigação da Coerência entre Nota e Comentário
+
+Análise das divergências entre avaliação numérica e opinião textual.
+
+Principais atividades:
+
+* Identificação de avaliações inconsistentes.
+* Casos de notas altas com comentários negativos.
+* Casos de notas baixas com comentários positivos.
+* Visualização gráfica das divergências.
+* Levantamento de hipóteses sobre o comportamento dos consumidores.
+
+---
+
+## Seção 5 — Análise de Sentimento
+
+Aplicação de modelos de NLP para classificação automática dos comentários.
+
+Modelos utilizados:
+
+* VADER
+* LeIA
+* Transformers
+
+Principais atividades:
+
+* Classificação dos comentários.
+* Comparação dos resultados obtidos.
+* Visualização gráfica das distribuições de sentimento.
+* Avaliação do comportamento de cada modelo.
+
+---
+
+## Seção 6 — Comparação entre Modelos
+
+Etapa destinada à avaliação dos modelos de análise de sentimento.
+
+Principais atividades:
+
+* Comparação de desempenho.
+* Avaliação da concordância entre classificações.
+* Identificação do modelo mais adequado para textos em português.
+* Construção de gráficos comparativos.
+
+---
+
+## Seção 7 — Análise Textual Complementar
+
+Exploração aprofundada do conteúdo textual das avaliações.
+
+Principais atividades:
+
+* Análise de emojis.
+* Frequência de palavras.
+* Geração de Word Clouds.
+* Investigação dos termos mais frequentes em avaliações inconsistentes.
+* Identificação de padrões linguísticos relevantes.
+
+---
+
+## Seção 8 — Índice de Confiabilidade por Vendedor
+
+Transformação dos resultados analíticos em um indicador de negócio.
+
+Principais atividades:
+
+* Cruzamento entre vendedores e avaliações inconsistentes.
+* Criação de um Índice de Confiabilidade.
+* Identificação de vendedores com maior discrepância entre nota e sentimento.
+* Ranking de vendedores baseado na consistência das avaliações.
+
+Além disso, foi realizada uma comparação entre:
+
+* Selection Sort (implementação manual)
+* sort_values() (Pandas)
+
+demonstrando a diferença entre abordagens educacionais e soluções otimizadas para ambientes de produção.
+
+---
+
+# 📈 Principais Resultados
+
+* Identificação de inconsistências entre notas e sentimentos.
+* Avaliação comparativa de modelos de NLP para português.
+* Descoberta de padrões textuais associados à insatisfação dos clientes.
+* Desenvolvimento de um índice de confiabilidade para vendedores.
+* Geração de insights estratégicos para melhoria da experiência do consumidor.
+
+---
+
+* **Autores:**
+- Kevin Joel
+- Paulo Henrique
+- Marcos Gomes
+- Vitor de Freitas
+
