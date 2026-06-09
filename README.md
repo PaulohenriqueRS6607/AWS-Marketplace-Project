@@ -33,7 +33,7 @@ Os resultados obtidos fornecem insights que podem auxiliar na melhoria da experi
 
 ---
 
-# 📂 Estrutura do Projeto
+# Estrutura do Projeto
 
 ## Seção 0 — Configuração do Ambiente
 
@@ -175,7 +175,7 @@ demonstrando a diferença entre abordagens educacionais e soluções otimizadas 
 
 ---
 
-# 📈 Principais Resultados
+# Principais Resultados
 
 * Identificação de inconsistências entre notas e sentimentos.
 * Avaliação comparativa de modelos de NLP para português.
