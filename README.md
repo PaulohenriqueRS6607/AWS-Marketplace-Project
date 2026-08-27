@@ -185,9 +185,9 @@ demonstrando a diferença entre abordagens educacionais e soluções otimizadas 
 
 ---
 
-* **Autores:**
-- Kevin Joel
-- Paulo Henrique
-- Marcos Gomes
-- Vitor de Freitas
+## Autores
+- **Kevin Joel** - (https://github.com/KevinJota)
+- **Paulo Henrique** - (https://github.com/PaulohenriqueRS6607)
+- **Marcos Gomes** - (https://github.com/MarcosVGomes1)
+- **Vitor de Freitas** - (https://github.com/Vitordfz)
 
